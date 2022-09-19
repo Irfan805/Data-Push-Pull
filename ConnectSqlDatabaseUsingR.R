@@ -1,6 +1,10 @@
 #Necessary libraries
 library(odbc)
 library(DBI)
+library(usethis)
+
+#Connect this project with github
+use_github(protocol = 'https', auth_token = Sys.getenv("github_path"))
 
 #Create connection with DB
 conn <- dbConnect(odbc(), Driver = "SQL Server", 
